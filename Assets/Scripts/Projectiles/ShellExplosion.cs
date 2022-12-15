@@ -47,6 +47,7 @@ public class ShellExplosion : MonoBehaviour
 
 
             float damage = CalculateDamage(targetRigidbody.position); // calculate the damage based on the distance
+            Debug.Log(targetRigidbody.name + "got hit");
             TankGameEvents.OnObjectTakeDamageEvent?.Invoke(targetRigidbody.transform, -damage); // invoke our take damage event
         }
 

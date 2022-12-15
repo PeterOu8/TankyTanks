@@ -21,18 +21,15 @@ public class TankMovement
     private Transform tankReference; // a reference to the tank gameobject
 
 
-    public void ChangeSpeed(float ChangeAmount)
+    public void ApplySpeedBuff(bool applying)
     {
-        if ((speed + ChangeAmount) >= 20f) {
-            speed += ChangeAmount; 
+        if (applying)
+        {
+            speed = 25f;
         } 
-        else if ((speed + ChangeAmount) <= 5f)
+        else
         {
-            speed = 5f;
-        }
-        else 
-        {
-            return;
+            speed = 12f;
         }
     }
 

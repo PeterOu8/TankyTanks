@@ -18,14 +18,11 @@ public class ArenaOfDeath : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Arena Entered");
-        Debug.Log("Name: "+ other.gameObject.name);
-        // other.gameObject.GetComponent<TankMovement>().ChangeSpeed(8);
+        Debug.Log(other.gameObject.name + "entered arena.");
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.gameObject.name + "Arena exited");
         TankGameEvents.OnObjectTakeDamageEvent?.Invoke(other.transform, -100);
     }
 

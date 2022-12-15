@@ -18,15 +18,12 @@ public class SpeedPuddle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Speedpuddle Entered");
-        Debug.Log("Name: "+ other.gameObject.name);
-        // other.gameObject.GetComponent<TankMovement>().ChangeSpeed(8);
+        other.gameObject.GetComponent<Tank>().tankMovement.ApplySpeedBuff(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.gameObject.name + "Speedpuddle exited");
-        // collision.gameObject.tankMovement.ChangeSpeed(-8);
+        other.gameObject.GetComponent<Tank>().tankMovement.ApplySpeedBuff(false);
     }
 
 }
